@@ -1,6 +1,4 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Navisu4d" />
-
 &#xa0;
 
   <!-- <a href="https://navisu4d.netlify.app">Demo</a> -->
