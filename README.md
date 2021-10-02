@@ -46,7 +46,7 @@
 
 ## :dart: About
 
-Describe your project
+Une application de visualisation des satellites de géopositionnement
 
 ## :sparkles: Features
 
