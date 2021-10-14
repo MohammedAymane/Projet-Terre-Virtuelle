@@ -1,5 +1,5 @@
 import React from "react";
-import { Viewer, CzmlDataSource, GeoJsonDataSource } from "resium";
+import { Viewer, CzmlDataSource, GeoJsonDataSource, Sun, Camera } from "resium";
 var satellite = require("./Satellite.json");
 
 const data = {
@@ -18,8 +18,10 @@ const data = {
 function App() {
   return (
     <Viewer full>
+      <Camera />
       <CzmlDataSource data={satellite} />
       <GeoJsonDataSource data={data} />
+      <Sun show={true} glowFactor={3} />
     </Viewer>
   );
 }
