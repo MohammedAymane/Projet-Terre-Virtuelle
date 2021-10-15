@@ -1,6 +1,7 @@
 import React from "react";
 import { Viewer, CzmlDataSource, GeoJsonDataSource, Sun, Camera } from "resium";
 var satellite = require("./Satellite.json");
+var satellite2 = require("./Satellite2.json");
 
 const data = {
   type: "Feature",
