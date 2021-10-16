@@ -76,6 +76,7 @@ $ cd Backend
 $ npm install
 
 # Run the Backend. It will initialize in the <http://localhost:9000>
+$ cd Backend
 $ npm start
 
 # Install Frondend dependencies
@@ -83,5 +84,6 @@ $ cd Frontend
 $ npm install
 
 # Run the Frontend. It will initialize in the <http://localhost:8080>
+$ cd Frontend
 $ npm start
 ```
