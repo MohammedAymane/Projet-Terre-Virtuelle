@@ -1,9 +1,3 @@
-<div align="center" id="top"> 
-&#xa0;
-
-  <!-- <a href="https://projetterrevirtuelle.netlify.app">Demo</a> -->
-</div>
-
 <h1 align="center">Projet Terre Virtuelle</h1>
 
 <!-- Status -->
