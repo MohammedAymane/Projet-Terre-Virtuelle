@@ -4,5 +4,5 @@ require("cesium/Widgets/widgets.css");
 
 var viewer = new Cesium.Viewer("cesiumContainer");
 viewer.dataSources.add(
-  Cesium.CzmlDataSource.load("https://testyyy.free.beeceptor.com/")
+  Cesium.CzmlDataSource.load("http://localhost:9000/orbiteSatellite")
 );
