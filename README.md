@@ -39,7 +39,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/projet-terre-virtuelle
+$ git clone https://github.com/MohammedAymane/projet-terre-virtuelle
 
 # Access
 $ cd projet-terre-virtuelle
