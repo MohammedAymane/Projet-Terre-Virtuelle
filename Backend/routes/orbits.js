@@ -12,9 +12,10 @@ router.get("/", async (req, res) => {
   var dataToSend;
   try {
     //const tle = await axios.get(req.body.satelliteLink);
-    const tle = await axios.get(
-      "https://celestrak.com/satcat/tle.php?CATNR=00900"
-    );
+    const tle = await axios.get(req.query.satelliteLink);
+    //const tle = await axios.get(
+    //  "https://celestrak.com/satcat/tle.php?CATNR=00900"
+    //);
     await fs.writeFile("./tleFiles/" + name + ".txt", tle.data);
 
     const python = spawn("python", [
@@ -27,9 +28,13 @@ router.get("/", async (req, res) => {
     python.stdout.on("data", async (data) => {
       console.log("Pipe data from python script ...");
       dataToSend = data.toString();
+      dataToSend = dataToSend
+        .split("'")
+        .join("")
+        .substring(1, dataToSend.length - 5);
+      data;
       //dataToSend = dataToSend.substring(2, dataToSend.length - 2);
-      res.send(dataToSend.split("'").join(""));
-
+      res.send(dataToSend);
       try {
         await fs.unlink("./tleFiles/" + name + ".txt");
         await fs.unlink("./czmlFiles/" + name + ".czml");
