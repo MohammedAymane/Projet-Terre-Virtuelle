@@ -27,19 +27,12 @@ router.get("/", async (req, res) => {
     // spawn new child process to call the python script
     python.stdout.on("data", async (data) => {
       console.log("Pipe data from python script ...");
-      dataToSend = data.toString();
-      dataToSend = dataToSend
-        .split("'")
-        .join("")
-        .substring(1, dataToSend.length - 5);
-      data;
-      //dataToSend = dataToSend.substring(2, dataToSend.length - 2);
-      res.send(dataToSend);
+      res.send(JSON.parse(data));
       try {
         await fs.unlink("./tleFiles/" + name + ".txt");
         await fs.unlink("./czmlFiles/" + name + ".czml");
       } catch (error) {
-        throw error;
+        res.send(error);
       }
     });
 
