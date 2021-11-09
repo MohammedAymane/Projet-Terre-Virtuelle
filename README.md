@@ -58,5 +58,5 @@ $ npm install
 
 # Run the Frontend. It will initialize in the <http://localhost:8080>
 $ cd Frontend
-$ npm start
+$ node_modules/.bin/webpack-dev-server --config webpack.config.js --open
 ```

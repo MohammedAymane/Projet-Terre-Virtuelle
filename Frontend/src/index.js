@@ -8,9 +8,12 @@ const getData = async (url) => {
   console.log(res.data);
   return res.data;
 };
-var czml = getData(
-  "http://localhost:9000/orbite?satelliteLink=https://celestrak.com/satcat/tle.php?CATNR=00900"
-);
 
 var viewer = new Cesium.Viewer("cesiumContainer");
-viewer.dataSources.add(Cesium.CzmlDataSource.load(czml));
+viewer.dataSources.add(
+  Cesium.CzmlDataSource.load(
+    getData(
+      "http://localhost:9000/orbite?satelliteLink=https://celestrak.com/satcat/tle.php?CATNR=00900"
+    )
+  )
+);
