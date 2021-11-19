@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
     <title>Hello World!</title>
-    <link rel="stylesheet" href="css/main.css">
     <style>
       @import url(../Build/Cesium/Widgets/widgets.css);
-
       html,
       body,
       #cesiumContainer {
@@ -29,38 +30,8 @@
   </head>
   <body>
     <div id="cesiumContainer"></div>
-    <!--div class="toolbar-left">
+    <div class="toolbar-left">
       <button onclick="alert('You clicked!');">Click me!</button>
-    </div-->
-    <div class="toolbar-left"  class="sidenav">
-        <div id="sideNavigation" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="#">Tous les satellites de navigations</a>
-          <a href="#">Satellites actifs pour un positionnement</a>
-      
-        </div>
-      
-        <nav class="topnav">
-          <a href="#" onclick="openNav()">
-            <svg width="30" height="30" id="icoOpen">
-              <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
-              <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
-              <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
-            </svg>
-          </a>
-        </nav>
     </div>
-    <script src="index.js"></script>
-    <script type="text/javascript">
-function openNav() {
-    document.getElementById("sideNavigation").style.width = "250px";
-    document.getElementById("sideNavigation").style.height = "1000px";
-  }
-  
-  function closeNav() {
-    document.getElementById("sideNavigation").style.width = "0";
-    document.getElementById("sideNavigation").style.height = "0";
-  }
-    </script>
   </body>
 </html>
