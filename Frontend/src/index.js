@@ -9,7 +9,9 @@ const getData = async (url) => {
   return res.data;
 };
 
-var viewer = new Cesium.Viewer("cesiumContainer");
+var viewer = new Cesium.Viewer("cesiumContainer", {
+  shouldAnimate: true,
+});
 viewer.dataSources.add(
   Cesium.CzmlDataSource.load(
     getData(
