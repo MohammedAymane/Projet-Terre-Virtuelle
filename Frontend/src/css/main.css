@@ -22,29 +22,11 @@ html,#cesiumContainer {
     overflow: hidden;
 }
 
-/**** LE CSS DU MENU ET DE LA NAVIGATION A GAUCHE ****/
-
-.sidenav {
+#checkboxs {
 display: flex;
 display: inline;
 float:left;
-height: 100%;
-width: 0;
-position:absolute;
-z-index: 100;
-background-color: #7a67b56b;
-overflow-x: hidden;
-padding-top: 60px;
-transition: 0.5s;
-}
-
-/**** LES LIENS DANS LE MENU DE NAVIGATION ****/
-
-.sidenav a {
-display: flex;
-display: inline;
-float:left;
-padding: 5px 5px 5px 30px;
+padding: 10px;
 text-decoration: none;
 font-size: 18px;
 color: #f3e9e9;
@@ -57,61 +39,24 @@ font-family: 'Quicksand', sans-serif;
 font-weight: bold;
 }
 
-/**** COULEUR DES LIENS AU PASSAGE DE LA SOURIS ****/
-
-.sidenav a:hover,
-.offcanvas a:focus {
-color: #9EC479;
+.dropdown{
+    position :relative;
+}
+.dropdown-menu{
+    position :absolute;
+    background-color: rgba(38, 38, 38, 0.75);
+    border: 1px solid #444;
+    border-radius: 10px;
+    width : 200px;
+    opacity: 0;
+    pointer-events: none;
+    transform : translateY(-10px);
+    transition: opacity 150ms ease-in-out, 
+            transform 150ms ease-in-out;
 }
 
-/**** POSITION DU BOUTON ****/
-
-.sidenav .closebtn {
-display:flex;
-position: absolute;
-top: 0;
-font-size: 35px;
-margin-left:15px;
+.dropdown.active > .link + .dropdown-menu {
+    opacity: 1;
+    transform : translateY(0px);
+    pointer-events: auto;
 }
-
-
-/**** POUR QUE LE MENU SE POUSSE VERS LA DROITE ****/
-
-#main {
-transition: margin-left .5s;
-padding: 20px;
-overflow: visible;
-width: 100%;
-}
-
-
-/**** LA COULEUR A LA NAV ****/
-
-.topnav {
-background-color: #f5eeee rgb(red, green, blue);
-}
-
-/**** LES LIENS DANS LA NAV ****/
-
-.topnav a {
-color: #f5f3f0 rgb( 76, 76, 76, 76);
-text-align: center;
-padding: 10px 10px;
-text-decoration: none;
-}
-
-/**** JE CHANGE LA COULEUR DES LIENS AU PASSAGE DE LA SOURIS ****/
-
-.topnav a:hover {
-background-color: #f5f3f0;
-color: #f5f3f0;
-}
-
-/**** ON  PEUT AJOUTER UNE COULEUR AU LIEN ACTIF ****/
-
-.topnav>a.active {
-background-color: #f1eeee;
-color: #f5f3f0;
-}
-
-/**** FIN CSS MENU BURGER ****/

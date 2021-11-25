@@ -1,5 +1,3 @@
-/* JAVASCRIPT MENU BURGER  */
-
 
 
 
@@ -22,5 +20,7 @@ viewer.dataSources.add(
     )
   )
 );
+
+
 
 
