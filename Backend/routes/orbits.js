@@ -9,11 +9,15 @@ const { json } = require("express");
 
 router.get("/:name", async (req, res) => {
   const name = req.params.name;
-  const satelittes = await Satelittes.findOne(
-    { name: { $regex: name } },
-    { czml: 1, _id: 0 }
-  );
-  res.json(satelittes.czml);
+  try {
+    const satelittes = await Satelittes.findOne(
+      { name: { $regex: name } },
+      { czml: 1, _id: 0 }
+    );
+    res.json(satelittes.czml);
+  } catch (error) {
+    res.json({ message: "No Satellite found" });
+  }
 });
 
 router.get("/", async (req, res) => {

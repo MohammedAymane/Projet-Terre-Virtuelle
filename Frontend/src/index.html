@@ -53,6 +53,8 @@
           </div> 
         </div>
       </div>
+      <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10">
+      <button id="btn">Ajouter un Satelitte</button>
   </div>
   <script src="index.js"></script>
   <script type="text/javascript">
@@ -72,5 +74,13 @@
       })
     })
   </script>
+
+<!-- <script type="text/javascript">
+  document.getElementById("btn").addEventListener('click', e =>{
+    console.log(axios);
+
+  })
+</script> -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>
