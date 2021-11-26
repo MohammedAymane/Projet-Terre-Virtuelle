@@ -3,7 +3,14 @@ require("./css/main.css");
 require("cesium/Widgets/widgets.css");
 const axios = require("axios");
 
-const getData = async (url) => {
+const getSatByName = async (name) => {
+  var res = await axios.get("http://localhost:9000/orbite?name=" + name + "");
+  console.log("http://localhost:9000/orbite?name=" + name);
+  console.log(res.data.czml);
+  return res.data.czml;
+};
+
+const getAllSat = async (url) => {
   var res = await axios.get(url);
   console.log(res.data);
   return res.data;
@@ -12,10 +19,7 @@ const getData = async (url) => {
 var viewer = new Cesium.Viewer("cesiumContainer", {
   shouldAnimate: true,
 });
+// viewer.dataSources.add(Cesium.CzmlDataSource.load(getSatByName("CALSPHERE 1")));
 viewer.dataSources.add(
-  Cesium.CzmlDataSource.load(
-    getData(
-      "http://localhost:9000/orbite?satelliteLink=https://celestrak.com/satcat/tle.php?CATNR=00900"
-    )
-  )
+  Cesium.CzmlDataSource.load(getAllSat("http://localhost:9000/orbite/"))
 );
