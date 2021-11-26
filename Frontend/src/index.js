@@ -4,9 +4,7 @@ require("cesium/Widgets/widgets.css");
 const axios = require("axios");
 
 const getSatByName = async (name) => {
-  var res = await axios.get("http://localhost:9000/orbite?name=" + name + "");
-  console.log("http://localhost:9000/orbite?name=" + name);
-  console.log(res.data);
+  var res = await axios.get("http://localhost:9000/orbite/" + name);
   return res.data;
 };
 
