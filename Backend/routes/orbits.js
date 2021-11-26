@@ -13,8 +13,9 @@ router.get("/:name", async (req, res) => {
     { name: { $regex: name } },
     { czml: 1, _id: 0 }
   );
-  res.json(satelittes);
+  res.json(satelittes.czml);
 });
+
 router.get("/", async (req, res) => {
   const satelittes = await Satelittes.find({}, { czml: 1, _id: 0 });
   dataToSend = [];

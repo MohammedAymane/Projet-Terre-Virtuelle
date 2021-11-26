@@ -6,20 +6,20 @@ const axios = require("axios");
 const getSatByName = async (name) => {
   var res = await axios.get("http://localhost:9000/orbite?name=" + name + "");
   console.log("http://localhost:9000/orbite?name=" + name);
-  console.log(res.data.czml);
-  return res.data.czml;
-};
-
-const getAllSat = async (url) => {
-  var res = await axios.get(url);
   console.log(res.data);
   return res.data;
 };
 
+// const getAllSat = async (url) => {
+//   var res = await axios.get(url);
+//   console.log(res.data);
+//   return res.data;
+// };
+
 var viewer = new Cesium.Viewer("cesiumContainer", {
   shouldAnimate: true,
 });
-// viewer.dataSources.add(Cesium.CzmlDataSource.load(getSatByName("CALSPHERE 1")));
-viewer.dataSources.add(
-  Cesium.CzmlDataSource.load(getAllSat("http://localhost:9000/orbite/"))
-);
+viewer.dataSources.add(Cesium.CzmlDataSource.load(getSatByName("GSAT0102")));
+// viewer.dataSources.add(
+//   Cesium.CzmlDataSource.load(getAllSat("http://localhost:9000/orbite/"))
+// );
