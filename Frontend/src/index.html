@@ -8,9 +8,9 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
     />
     <title>Hello World!</title>
+    <link rel="stylesheet" href="css/main.css">
     <style>
       @import url(../Build/Cesium/Widgets/widgets.css);
-
       html,
       body,
       #cesiumContainer {
@@ -31,8 +31,46 @@
   </head>
   <body>
     <div id="cesiumContainer"></div>
-    <div class="toolbar-left">
+    <!--div class="toolbar-left">
       <button onclick="alert('You clicked!');">Click me!</button>
-    </div>
+    </div-->
+  </div-->
+  <div class="toolbar-left">
+      <div class="dropdown" data-dropdown>
+        <button class="link cesium-button cesium-toolbar-button" data-dropdown-button>
+          <svg width="30" height="30" id="icoOpen">
+            <path d="M5,6 25,6" stroke="#fff" stroke-width="4" />
+            <path d="M5,14 25,14" stroke="#fff" stroke-width="4" />
+            <path d="M5,22 25,22" stroke="#fff" stroke-width="4" />
+          </svg>
+        </button>
+        <div class="dropdown-menu">
+          <div id ="checkboxs" >
+            <input type="checkbox" id="satnav" name="satnav" value="SatNav"> 
+            <label for="satnav"> Tous les satellites de navigations </label><br>
+            <input type="checkbox" id="satpos" name="satpos" value="SatPos">
+            <label for="satpos"> Satellites actifs pour un positionnement </label><br>
+          </div> 
+        </div>
+      </div>
+  </div>
+  <script src="index.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('click', e =>{
+      const isDropdownButton = e.target.matches("[data-dropdown-button]")
+      if (!isDropdownButton && e.target.closest('[data-dropdown]') != null) return
+
+      let currentDropdown
+      if (isDropdownButton) {
+        currentDropdown = e.target.closest('[data-dropdown]')
+        currentDropdown.classList.toggle('active')
+      }
+
+      document.querySelectorAll("[data-dropdown].active").forEach(dropdown =>{
+        if (dropdown === currentDropdown) return
+        dropdown.classList.remove('active')
+      })
+    })
+  </script>
   </body>
 </html>
