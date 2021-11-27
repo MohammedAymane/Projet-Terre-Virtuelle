@@ -21,7 +21,7 @@ router.get("/:name", async (req, res) => {
       return res.json(satelittes.czml);
     }
   } catch (error) {
-    res.json({ message: "No Satellite found" });
+    res.status(404).json({ message: "Satelittes not found" });
   }
 });
 

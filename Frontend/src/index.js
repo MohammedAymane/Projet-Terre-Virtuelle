@@ -3,6 +3,7 @@ require("./css/main.css");
 require("cesium/Widgets/widgets.css");
 const { getSatByName, getAllSat, loadData, cleanView } = require("./functions");
 
+var SatelittesToShow = [];
 var viewer = new Cesium.Viewer("cesiumContainer", {
   shouldAnimate: true,
 });
@@ -25,7 +26,14 @@ document.getElementById("cleanView").addEventListener("click", async (e) => {
  * @description: This function is used to visualize the selected satellite
  */
 document.getElementById("arr").addEventListener("change", (e) => {
-  viewer.dataSources.add(
-    Cesium.CzmlDataSource.load(getSatByName(e.target.value))
-  );
+  SatelittesToShow.push({
+    name: e.target.value,
+    czml: getSatByName(e.target.value),
+  });
+});
+
+document.getElementById("save").addEventListener("click", (e) => {
+  SatelittesToShow.forEach((element) => {
+    viewer.dataSources.add(Cesium.CzmlDataSource.load(element.czml));
+  });
 });
