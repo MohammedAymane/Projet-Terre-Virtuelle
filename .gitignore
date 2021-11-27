@@ -10,3 +10,5 @@ Backend/pythonScript/Satellites/Beidou.tle
 Backend/pythonScript/Satellites/Galileo.tle
 Backend/pythonScript/Satellites/GLONASS Operational.tle
 Backend/pythonScript/Satellites/GPS Operational.tle
+Backend/.env
+Backend/.env
