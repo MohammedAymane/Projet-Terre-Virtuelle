@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
-const mongoRUI = require("./key.json").mongoURI;
+var dotenv = require("dotenv").config();
+const mongoURI = process.env.MONGOLAB_URI;
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(mongoRUI, {
+    await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       autoIndex: false,
