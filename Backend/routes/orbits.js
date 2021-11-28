@@ -4,32 +4,32 @@ const router = express.Router();
 // var fs = require("fs").promises;
 // const { v4: uuidv4 } = require("uuid");
 // const { spawn } = require("child_process");
-const Satelittes = require("../models/satelittes");
+const Satellites = require("../models/satellites");
 // const { json } = require("express");
 
 router.get("/:name", async (req, res) => {
   const name = req.params.name;
-  var satelittes;
+  var satellites;
   try {
-    satelittes = await Satelittes.findOne({ name: name }, { czml: 1, _id: 0 });
-    if (satelittes) return res.json(satelittes.czml);
+    satellites = await Satellites.findOne({ name: name }, { czml: 1, _id: 0 });
+    if (satellites) return res.json(satellites.czml);
     else {
-      satelittes = await Satelittes.findOne(
+      satellites = await Satellites.findOne(
         { name: { $regex: name } },
         { czml: 1, _id: 0 }
       );
-      return res.json(satelittes.czml);
+      return res.json(satellites.czml);
     }
   } catch (error) {
-    res.status(404).json({ message: "Satelittes not found" });
+    res.status(404).json({ message: "Satellites not found" });
   }
 });
 
 router.get("/", async (req, res) => {
-  const satelittes = await Satelittes.find({}, { name: 1, _id: 0 });
+  const satellites = await Satellites.find({}, { name: 1, _id: 0 });
   dataToSend = [];
-  for (let i = 0; i < satelittes.length; i++) {
-    dataToSend.push(satelittes[i].name);
+  for (let i = 0; i < satellites.length; i++) {
+    dataToSend.push(satellites[i].name);
   }
   res.json(dataToSend);
 });
@@ -79,7 +79,7 @@ router.get("/", async (req, res) => {
 //       element.NORAD_CAT_ID;
 //     console.log(url);
 //     var czml = await axios.get(url);
-//     sat = new Satelittes({
+//     sat = new Satellites({
 //       name: element.OBJECT_NAME,
 //       CATNR: element.NORAD_CAT_ID,
 //       czml: czml.data[0],

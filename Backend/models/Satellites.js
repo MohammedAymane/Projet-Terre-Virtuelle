@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const SatelittesSchema = new Schema({
+const SatellitesSchema = new Schema({
   name: {
     type: String,
   },
@@ -16,4 +16,4 @@ const SatelittesSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("satelittes", SatelittesSchema);
+module.exports = mongoose.model("satellites", SatellitesSchema);
