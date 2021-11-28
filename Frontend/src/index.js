@@ -1,9 +1,10 @@
 var Cesium = require("cesium/Cesium");
 require("./css/main.css");
 require("cesium/Widgets/widgets.css");
-const { getSatByName, getAllSat, loadData, cleanView } = require("./functions");
+const { getSatByName, getAllSat, loadData } = require("./functions");
 
 var SatelittesToShow = [];
+var select = document.getElementById("arr");
 var viewer = new Cesium.Viewer("cesiumContainer", {
   shouldAnimate: true,
 });
@@ -15,25 +16,34 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
 document
   .getElementById("loadSatellites")
   .addEventListener("click", async (e) => {
-    loadData(await getAllSat("http://localhost:9000/orbite/"));
+    loadData(await getAllSat("http://localhost:9000/orbite/"), select);
   });
 
 document.getElementById("cleanView").addEventListener("click", async (e) => {
-  cleanView(viewer);
+  SatelittesToShow = [];
+  viewer.dataSources.removeAll(); // remove all data sources
 });
 
 /**
  * @description: This function is used to visualize the selected satellite
  */
 document.getElementById("arr").addEventListener("change", (e) => {
-  SatelittesToShow.push({
-    name: e.target.value,
-    czml: getSatByName(e.target.value),
-  });
+  SatelittesToShow = [...select.options]
+    .filter((option) => option.selected)
+    .map((option) => ({
+      name: option.value,
+      czml: getSatByName(option.value),
+    }));
+  console.log(SatelittesToShow);
 });
 
 document.getElementById("save").addEventListener("click", (e) => {
-  SatelittesToShow.forEach((element) => {
+  console.log(SatelittesToShow);
+  for (let index = 0; index < SatelittesToShow.length; index++) {
+    console.log(index);
+    const element = SatelittesToShow[index];
     viewer.dataSources.add(Cesium.CzmlDataSource.load(element.czml));
-  });
+    console.log("satelitte : " + element.name + " done");
+  }
+  SatelittesToShow = [];
 });

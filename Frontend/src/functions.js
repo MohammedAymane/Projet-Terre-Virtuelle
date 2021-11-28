@@ -16,8 +16,7 @@ const getAllSat = async (url) => {
   return res.data;
 };
 
-const loadData = (elmts) => {
-  var select = document.getElementById("arr");
+const loadData = (elmts, select) => {
   for (var i = 0; i < elmts.length; i++) {
     var optn = elmts[i];
     var el = document.createElement("option");
@@ -27,8 +26,4 @@ const loadData = (elmts) => {
   }
 };
 
-const cleanView = (viewer) => {
-  viewer.dataSources.removeAll(); // remove all data sources
-};
-
-module.exports = { getSatByName, getAllSat, loadData, cleanView };
+module.exports = { getSatByName, getAllSat, loadData };
