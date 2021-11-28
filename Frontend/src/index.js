@@ -34,16 +34,11 @@ document.getElementById("arr").addEventListener("change", (e) => {
       name: option.value,
       czml: getSatByName(option.value),
     }));
-  console.log(SatelittesToShow);
 });
 
 document.getElementById("save").addEventListener("click", (e) => {
-  console.log(SatelittesToShow);
   for (let index = 0; index < SatelittesToShow.length; index++) {
-    console.log(index);
     const element = SatelittesToShow[index];
     viewer.dataSources.add(Cesium.CzmlDataSource.load(element.czml));
-    console.log("satelitte : " + element.name + " done");
   }
-  SatelittesToShow = [];
 });
