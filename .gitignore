@@ -1,2 +1,14 @@
 
 Backend/pythonScript/tle2czml/__pycache__
+Backend/pythonScript/getNames.py
+Backend/pythonScript/orbit.json
+Backend/pythonScript/Satellite Names/beidoNames.txt
+Backend/pythonScript/Satellite Names/galileoNames.txt
+Backend/pythonScript/Satellite Names/GLONASSNames.txt
+Backend/pythonScript/Satellite Names/GPSNames.txt
+Backend/pythonScript/Satellites/Beidou.tle
+Backend/pythonScript/Satellites/Galileo.tle
+Backend/pythonScript/Satellites/GLONASS Operational.tle
+Backend/pythonScript/Satellites/GPS Operational.tle
+Backend/.env
+Backend/.env
