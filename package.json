@@ -1,0 +1,35 @@
+{
+  "name": "terre-virtuell-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-backend": "nodemon Backend\\index.js",
+    "start-frontend": "node_modules\\.bin\\webpack-dev-server --config webpack.config.js --open",
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "cesium": "^1.86.0",
+    "concurrently": "^6.4.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "cors": "^2.8.5",
+    "css-loader": "^6.3.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.3.0",
+    "tle2czml": "^1.0.0",
+    "url-loader": "^4.1.1",
+    "uuid": "^8.3.2",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

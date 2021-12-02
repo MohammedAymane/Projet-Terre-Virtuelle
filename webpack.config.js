@@ -10,7 +10,7 @@ const CopywebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   context: __dirname,
   entry: {
-    app: "./src/index.js",
+    app: "./Frontend/src/index.js",
   },
   output: {
     filename: "[name].js",
@@ -45,7 +45,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: "./Frontend/src/index.html",
     }),
     new CopywebpackPlugin({
       patterns: [
