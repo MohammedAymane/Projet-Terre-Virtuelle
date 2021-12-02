@@ -4,7 +4,8 @@ const axios = require("axios");
  * @description: This function is used to get czml of satelitte by name
  */
 const getSatByName = async (name) => {
-  var res = await axios.get("http://localhost:9000/orbite/" + name);
+  const querystring = "?name=" + name;
+  var res = await axios.get("http://localhost:9000/orbite" + querystring);
   return res.data;
 };
 

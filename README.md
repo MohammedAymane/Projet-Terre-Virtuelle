@@ -1,12 +1,12 @@
 <h1 align="center">Projet Terre Virtuelle</h1>
 
-<!-- Status -->
+Status
 
-<!-- <h4 align="center">
+<h4 align="center">
 	🚧  Projet Terre Virtuelle 🚀 Under construction...  🚧
 </h4>
 
-<hr> -->
+<hr>
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -25,15 +25,13 @@ Visualization of satellite orbits
 
 The following tools were used in this project:
 
-- [Python](https://www.python.org/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](http://expressjs.com/)
 - [Cesium](https://cesium.com/)
-- [Tle2czml](https://github.com/kujosHeist/tle2czml)
 
 ## :white_check_mark: Requirements
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [Node](https://nodejs.org/en/) and [Python](https://www.python.org/) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), and [Node](https://nodejs.org/en/) installed.
 
 ## :checkered_flag: Starting
 
@@ -44,19 +42,9 @@ $ git clone https://github.com/MohammedAymane/projet-terre-virtuelle
 # Access
 $ cd projet-terre-virtuelle
 
-# Install Backend dependencies
-$ cd Backend
+# Install dependencies
 $ npm install
 
-# Run the Backend. It will initialize in the <http://localhost:9000>
-$ cd Backend
+# Run the application. The frontend will initialize in the <http://localhost:8080> and the backend in <http://localhost:9000>
 $ npm start
-
-# Install Frondend dependencies
-$ cd Frontend
-$ npm install
-
-# Run the Frontend. It will initialize in the <http://localhost:8080>
-$ cd Frontend
-$ node_modules/.bin/webpack-dev-server --config webpack.config.js --open
 ```

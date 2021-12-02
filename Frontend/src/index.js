@@ -16,7 +16,7 @@ var viewer = new Cesium.Viewer("cesiumContainer", {
 document
   .getElementById("loadSatellites")
   .addEventListener("click", async (e) => {
-    loadData(await getAllSat("http://localhost:9000/orbite/"), select);
+    loadData(await getAllSat("http://localhost:9000/orbite"), select);
   });
 
 document.getElementById("cleanView").addEventListener("click", async (e) => {
@@ -39,6 +39,8 @@ document.getElementById("arr").addEventListener("change", (e) => {
 document.getElementById("save").addEventListener("click", (e) => {
   for (let index = 0; index < SatellitesToShow.length; index++) {
     const element = SatellitesToShow[index];
-    viewer.dataSources.add(Cesium.CzmlDataSource.load(element.czml));
+    element.czml.then((data) => {
+      viewer.dataSources.add(Cesium.CzmlDataSource.load(data.czml));
+    });
   }
 });

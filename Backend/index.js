@@ -1,9 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const connectDB = require("./config/db");
-
-// Connect to the Database
-connectDB();
 
 const app = express();
 
@@ -18,6 +14,7 @@ app.get("/", (req, res) => {
 app.use("/orbite", require("./routes/orbits"));
 
 const port = 9000;
+
 app.listen(port, () => {
   console.error(`app listening at http://localhost:${port}`);
 });
