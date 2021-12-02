@@ -44,19 +44,9 @@ $ git clone https://github.com/MohammedAymane/projet-terre-virtuelle
 # Access
 $ cd projet-terre-virtuelle
 
-# Install Backend dependencies
-$ cd Backend
+# Install dependencies
 $ npm install
 
-# Run the Backend. It will initialize in the <http://localhost:9000>
-$ cd Backend
-$ npm start
-
-# Install Frondend dependencies
-$ cd Frontend
-$ npm install
-
-# Run the Frontend. It will initialize in the <http://localhost:8080>
-$ cd Frontend
+# Run the application. The frontend will initialize in the <http://localhost:8080> and the backend in <http://localhost:9000>
 $ node_modules/.bin/webpack-dev-server --config webpack.config.js --open
 ```
