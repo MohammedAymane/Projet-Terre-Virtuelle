@@ -48,5 +48,5 @@ $ cd projet-terre-virtuelle
 $ npm install
 
 # Run the application. The frontend will initialize in the <http://localhost:8080> and the backend in <http://localhost:9000>
-$ node_modules/.bin/webpack-dev-server --config webpack.config.js --open
+$ npm start
 ```
