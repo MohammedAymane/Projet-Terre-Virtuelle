@@ -1,62 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    width :100% ;
-    margin: 0;
-    overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:#F5F3F0;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f3f0;
 }
 
-html,#cesiumContainer {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+html,
+#cesiumContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 #checkboxs {
-display: flex;
-display: inline;
-float:left;
-padding: 10px;
-text-decoration: none;
-font-size: 18px;
-color: #f3e9e9;
-transition: 0.3s;
--webkit-transition: 0.3s;
--moz-transition: 0.3s;
--ms-transition: 0.3s;
--o-transition: 0.3s;
-font-family: 'Quicksand', sans-serif;
-font-weight: bold;
+  display: flex;
+  display: inline;
+  float: left;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #f3e9e9;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
 }
 
-.dropdown{
-    position :relative;
+.dropdown {
+  position: relative;
 }
-.dropdown-menu-select{
-    position :absolute;
-    background-color: rgba(38, 38, 38, 0.75);
-    border: 1px solid #444;
-    border-radius: 10px;
-    width : 200px;
-    opacity: 0;
-    pointer-events: none;
-    transform : translateY(-10px);
-    transition: opacity 150ms ease-in-out, 
-            transform 150ms ease-in-out;
+.dropdown-menu-select {
+  position: absolute;
+  background-color: rgba(38, 38, 38, 0.75);
+  border: 1px solid #444;
+  border-radius: 10px;
+  width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
 
 .dropdown.active > .link + .dropdown-menu-select {
-    opacity: 1;
-    transform : translateY(0px);
-    pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
 }
