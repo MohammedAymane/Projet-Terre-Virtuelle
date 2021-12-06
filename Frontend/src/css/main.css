@@ -42,7 +42,7 @@ font-weight: bold;
 .dropdown{
     position :relative;
 }
-.dropdown-menu{
+.dropdown-menu-select{
     position :absolute;
     background-color: rgba(38, 38, 38, 0.75);
     border: 1px solid #444;
@@ -55,7 +55,7 @@ font-weight: bold;
             transform 150ms ease-in-out;
 }
 
-.dropdown.active > .link + .dropdown-menu {
+.dropdown.active > .link + .dropdown-menu-select {
     opacity: 1;
     transform : translateY(0px);
     pointer-events: auto;
