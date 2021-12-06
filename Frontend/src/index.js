@@ -1,7 +1,12 @@
 var Cesium = require("cesium/Cesium");
 require("./css/main.css");
 require("cesium/Widgets/widgets.css");
-const { getSatByName, getAllSat, loadData } = require("./functions");
+const {
+  getSatByName,
+  getAllSat,
+  loadData,
+  getSatByNameIncludes,
+} = require("./functions");
 
 var SatellitesToShow = [];
 var select = document.getElementById("arr");
@@ -43,4 +48,12 @@ document.getElementById("save").addEventListener("click", (e) => {
       viewer.dataSources.add(Cesium.CzmlDataSource.load(data.czml));
     });
   }
+});
+
+document.getElementById("search").addEventListener("click", async (e) => {
+  select.innerHTML = "";
+  loadData(
+    await getSatByNameIncludes(document.getElementById("form1").value),
+    select
+  );
 });

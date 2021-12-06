@@ -11,6 +11,15 @@ router.get("", async (req, res) => {
       }
     }
     return res.send({ status: false, message: "Not found" }).status(404);
+  } else if (req.query.search) {
+    const search = req.query.search;
+    dataToSend = [];
+    for (let index = 0; index < Satellites.length; index++) {
+      if (Satellites[index].name.includes(search)) {
+        dataToSend.push(Satellites[index].name);
+      }
+    }
+    return res.json(dataToSend);
   } else {
     dataToSend = [];
     for (let i = 0; i < Satellites.length; i++) {

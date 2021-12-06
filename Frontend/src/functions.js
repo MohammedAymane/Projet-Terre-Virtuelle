@@ -10,6 +10,16 @@ const getSatByName = async (name) => {
 };
 
 /**
+ * @description: This function is used to get satelitte who the name contain the string "search"
+ */
+
+const getSatByNameIncludes = async (search) => {
+  const querystring = "?search=" + search;
+  var res = await axios.get("http://localhost:9000/orbite" + querystring);
+  return res.data;
+};
+
+/**
  * @description: This function is used to get satelitte by name
  */
 const getAllSat = async (url) => {
@@ -27,4 +37,4 @@ const loadData = (elmts, select) => {
   }
 };
 
-module.exports = { getSatByName, getAllSat, loadData };
+module.exports = { getSatByName, getAllSat, loadData, getSatByNameIncludes };
