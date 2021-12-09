@@ -60,3 +60,6 @@ html,
   transform: translateY(0px);
   pointer-events: auto;
 }
+#threeSlabs{
+  pointer-events: none;
+}
