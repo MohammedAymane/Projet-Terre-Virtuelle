@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-backend": "nodemon Backend\\index.js",
     "start-frontend": "node_modules\\.bin\\webpack-dev-server --config webpack.config.js --open",
-    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\""
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-linux": "concurrently \"npm run start-backend\" \"node_modules/.bin/webpack-dev-server --config webpack.config.js --open\""
   },
   "author": "",
   "license": "ISC",
