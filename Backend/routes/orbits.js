@@ -29,6 +29,7 @@ router.get("", async (req, res) => {
   }
 });
 
+// Cette route permet d'envoyer la liste des satellites de geopositionnement actifs (elle envoie des données au hasard pour l'instant)
 router.get("/actifSatellite", async (req, res) => {
   dataToSend = [Satellites[0], Satellites[1], Satellites[2]];
   return res.json(dataToSend);
