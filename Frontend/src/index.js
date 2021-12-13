@@ -6,6 +6,7 @@ const {
   getAllSat,
   loadData,
   getSatByNameIncludes,
+  getActifSat,
 } = require("./functions");
 
 var SatellitesToShow = [];
@@ -56,4 +57,18 @@ document.getElementById("search").addEventListener("click", async (e) => {
     await getSatByNameIncludes(document.getElementById("form1").value),
     select
   );
+});
+
+document.getElementById("actifSat").addEventListener("click", async (e) => {
+  try {
+    SatellitesToShow = await getActifSat(
+      "http://localhost:9000/orbite/actifSatellite"
+    );
+    for (let index = 0; index < SatellitesToShow.length; index++) {
+      const element = SatellitesToShow[index];
+      viewer.dataSources.add(Cesium.CzmlDataSource.load(element.czml));
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });

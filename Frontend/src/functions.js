@@ -27,6 +27,11 @@ const getAllSat = async (url) => {
   return res.data;
 };
 
+const getActifSat = async (url) => {
+  var res = await axios.get(url);
+  return res.data;
+};
+
 const loadData = (elmts, select) => {
   for (var i = 0; i < elmts.length; i++) {
     var optn = elmts[i];
@@ -37,4 +42,10 @@ const loadData = (elmts, select) => {
   }
 };
 
-module.exports = { getSatByName, getAllSat, loadData, getSatByNameIncludes };
+module.exports = {
+  getSatByName,
+  getAllSat,
+  loadData,
+  getSatByNameIncludes,
+  getActifSat,
+};

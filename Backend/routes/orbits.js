@@ -29,4 +29,9 @@ router.get("", async (req, res) => {
   }
 });
 
+router.get("/actifSatellite", async (req, res) => {
+  dataToSend = [Satellites[0], Satellites[1], Satellites[2]];
+  return res.json(dataToSend);
+});
+
 module.exports = router;
